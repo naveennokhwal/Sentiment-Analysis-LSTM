@@ -1,0 +1,12 @@
+pandas
+matplotlib
+emoji
+autocorrect
+spacy
+nltk
+python -m spacy download en_core_web_sm
+tqdm
+numpy
+scikit-learn
+torch
+seaborn

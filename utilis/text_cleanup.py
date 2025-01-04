@@ -8,7 +8,7 @@ import emoji
 from autocorrect import Speller
 import spacy
 
-nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 class TextCleaning:
@@ -35,7 +35,7 @@ class TextCleaning:
         chat_words_dict = {
             'gn': 'good night',
             'gm': 'good morning',
-            'lol': 'laugh out loud',
+            'lol': 'laugh out loud', # you can add more to it
         }
         words = text.split()
         expanded_words = [chat_words_dict.get(word, word) for word in words]
@@ -52,11 +52,9 @@ class TextCleaning:
     def handle_emojis(self, text):
         return emoji.demojize(text)
 
-    # Spelling correction
-    
+    # Spelling correction    
     def correct_spelling(self, text):
         return ' '.join(self.spell(word) for word in text.split())
-
 
     # Tokenization
     def tokenize_text(self, text):
